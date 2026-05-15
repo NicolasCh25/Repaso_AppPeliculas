@@ -1,0 +1,85 @@
+<ion-header translucent="true">
+  <ion-toolbar color="dark">
+    <ion-title class="titulo">
+      🎮 GameStore
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="fondo">
+
+  <!-- Banner -->
+  <div class="banner">
+    <h1>🔥 Venta de Videojuegos</h1>
+    <p>Encuentra tus juegos favoritos al mejor precio</p>
+  </div>
+
+  <!-- Lista de videojuegos -->
+  <ion-list lines="none" class="lista-juegos">
+
+    <ion-card class="card-juego" *ngFor="let juego of videojuegos">
+
+      <img [src]="juego.imagen_url" alt="{{ juego.titulo }}" class="imagen-juego">
+
+      <ion-card-header>
+        <ion-card-title>{{ juego.titulo }}</ion-card-title>
+        <ion-card-subtitle>
+          🎮 {{ juego.plataforma }}
+        </ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+
+        <div class="categoria">
+          {{ juego.categoria }}
+        </div>
+
+        <div class="info">
+          <span class="precio">
+            💲{{ juego.precio }}
+          </span>
+
+          <span class="stock">
+            📦 Stock: {{ juego.stock }}
+          </span>
+        </div>
+
+        <div class="botones">
+
+          <ion-button
+            color="warning"
+            expand="block"
+            [routerLink]="['/videojuegos-form', juego.id]">
+            ✏️ Editar
+          </ion-button>
+
+          <ion-button
+            color="danger"
+            expand="block"
+            (click)="eliminar(juego.id!)">
+            🗑️ Eliminar
+          </ion-button>
+
+        </div>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  </ion-list>
+
+ 
+<!-- Botón flotante -->
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+
+  <ion-fab-button
+    class="boton-agregar"
+    routerLink="/videojuegos-form">
+
+    <span class="texto-boton">+</span>
+
+  </ion-fab-button>
+
+</ion-fab>
+
+</ion-content>
