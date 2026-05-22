@@ -1,0 +1,166 @@
+.fondo {
+
+  --background: #0b0b0b;
+
+}
+
+/* TITULO */
+
+.titulo-app {
+
+  font-size: 24px;
+
+  font-weight: bold;
+
+  letter-spacing: 1px;
+
+}
+
+/* GRID */
+
+.contenedor-peliculas {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(350px, 1fr));
+
+  gap: 20px;
+
+  padding: 20px;
+
+}
+
+/* CARD */
+
+.card-pelicula {
+
+  background: #181818;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  color: white;
+
+  transition: 0.3s;
+
+  box-shadow:
+    0 4px 20px rgba(0,0,0,0.6);
+
+}
+
+.card-pelicula:hover {
+
+  transform: scale(1.02);
+
+}
+
+/* POSTER */
+
+.poster {
+
+  width: 100%;
+
+  height: 260px;
+
+  object-fit: cover;
+
+}
+
+/* CONTENIDO */
+
+.contenido {
+
+  padding: 15px;
+
+}
+
+.titulo {
+
+  font-size: 24px;
+
+  font-weight: bold;
+
+  margin-bottom: 8px;
+
+}
+
+.director {
+
+  color: #bdbdbd;
+
+  margin-bottom: 8px;
+
+}
+
+.genero {
+
+  color: #ff4d6d;
+
+  font-size: 18px;
+
+  margin-bottom: 10px;
+
+}
+
+.precio {
+
+  color: #00ff99;
+
+  margin-bottom: 15px;
+
+}
+
+/* VIDEO */
+
+iframe {
+
+  border-radius: 12px;
+
+  margin-bottom: 15px;
+
+}
+
+/* AUDIO */
+
+audio {
+
+  width: 100%;
+
+  margin-bottom: 15px;
+
+}
+
+/* BOTONES */
+
+.botones {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+}
+
+/* FAB */
+
+.boton-fab {
+
+  --background: linear-gradient(
+    135deg,
+    #ff0055,
+    #7b2cff
+  );
+
+  width: 70px;
+
+  height: 70px;
+
+  font-size: 28px;
+
+  box-shadow:
+    0 0 20px rgba(255,0,85,0.5);
+
+}

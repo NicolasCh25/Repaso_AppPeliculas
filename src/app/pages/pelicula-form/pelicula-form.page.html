@@ -1,0 +1,148 @@
+<ion-header>
+
+  <ion-toolbar color="dark">
+
+    <ion-title>
+
+      {{
+        id
+        ? 'Editar Película'
+        : 'Nueva Película'
+      }}
+
+    </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content
+  class="ion-padding fondo">
+
+  <!-- TITULO -->
+
+  <ion-item>
+
+    <ion-label position="stacked">
+      Título
+    </ion-label>
+
+    <ion-input
+      [(ngModel)]="pelicula.titulo">
+    </ion-input>
+
+  </ion-item>
+
+  <!-- DIRECTOR -->
+
+  <ion-item>
+
+    <ion-label position="stacked">
+      Director
+    </ion-label>
+
+    <ion-input
+      [(ngModel)]="pelicula.director">
+    </ion-input>
+
+  </ion-item>
+
+  <!-- PRECIO -->
+
+  <ion-item>
+
+    <ion-label position="stacked">
+      Precio
+    </ion-label>
+
+    <ion-input
+      type="number"
+      [(ngModel)]="pelicula.precio">
+    </ion-input>
+
+  </ion-item>
+
+  <!-- STOCK -->
+
+  <ion-item>
+
+    <ion-label position="stacked">
+      Stock
+    </ion-label>
+
+    <ion-input
+      type="number"
+      [(ngModel)]="pelicula.stock">
+    </ion-input>
+
+  </ion-item>
+
+  <!-- GENERO -->
+
+  <ion-item>
+
+    <ion-label position="stacked">
+      Género
+    </ion-label>
+
+    <ion-input
+      [(ngModel)]="pelicula.genero">
+    </ion-input>
+
+  </ion-item>
+
+  <!-- IMAGEN -->
+
+  <ion-item>
+
+    <ion-label position="stacked">
+      URL Poster
+    </ion-label>
+
+    <ion-input
+      [(ngModel)]="pelicula.imagen_url">
+    </ion-input>
+
+  </ion-item>
+
+  <!-- VIDEO -->
+
+  <ion-item>
+
+    <ion-label position="stacked">
+      URL Trailer YouTube
+    </ion-label>
+
+    <ion-input
+      [(ngModel)]="pelicula.video_url">
+    </ion-input>
+
+  </ion-item>
+
+  <!-- AUDIO -->
+
+  <ion-item>
+
+    <ion-label position="stacked">
+      URL Audio
+    </ion-label>
+
+    <ion-input
+      [(ngModel)]="pelicula.audio_url">
+    </ion-input>
+
+  </ion-item>
+
+  <!-- BOTON -->
+
+  <ion-button
+    expand="block"
+    class="ion-margin-top"
+    color="danger"
+    (click)="guardar()">
+
+    Guardar Película
+
+  </ion-button>
+
+</ion-content>

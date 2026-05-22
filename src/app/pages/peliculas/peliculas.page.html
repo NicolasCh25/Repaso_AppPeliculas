@@ -1,0 +1,136 @@
+<ion-header translucent="true">
+
+  <ion-toolbar color="dark">
+
+    <ion-title class="titulo-app">
+      🎬 CineFlix
+    </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true" class="fondo">
+
+  <!-- GRID PELICULAS -->
+
+  <div class="contenedor-peliculas">
+
+    <ion-card
+      class="card-pelicula"
+      *ngFor="let pelicula of peliculas">
+
+      <!-- POSTER -->
+
+      <img
+        class="poster"
+        [src]="pelicula.imagen_url"
+        alt="poster">
+
+      <!-- INFO -->
+
+      <div class="contenido">
+
+        <h2 class="titulo">
+
+          {{ pelicula.titulo }}
+
+        </h2>
+
+        <p class="director">
+
+          🎥 {{ pelicula.director }}
+
+        </p>
+
+        <p class="genero">
+
+          🎭 {{ pelicula.genero }}
+
+        </p>
+
+        <h3 class="precio">
+
+          💲{{ pelicula.precio }}
+
+        </h3>
+
+        <!-- VIDEO -->
+
+        <iframe
+
+          width="100%"
+          height="180"
+
+          [src]="obtenerVideoSeguro(pelicula.video_url)"
+
+          frameborder="0"
+
+          allowfullscreen>
+
+        </iframe>
+
+        <!-- AUDIO -->
+
+        <audio controls>
+
+          <source
+            [src]="pelicula.audio_url"
+            type="audio/mpeg">
+
+        </audio>
+
+        <!-- BOTONES -->
+
+        <div class="botones">
+
+          <ion-button
+
+            color="warning"
+
+            expand="block"
+
+            [routerLink]="['/pelicula-form', pelicula.id]">
+
+            ✏️ Editar
+
+          </ion-button>
+
+          <ion-button
+
+            color="danger"
+
+            expand="block"
+
+            (click)="eliminar(pelicula.id!)">
+
+            🗑️ Eliminar
+
+          </ion-button>
+
+        </div>
+
+      </div>
+
+    </ion-card>
+
+  </div>
+
+  <!-- BOTON FLOTANTE -->
+
+  <ion-fab
+    vertical="bottom"
+    horizontal="end"
+    slot="fixed">
+
+    <ion-fab-button
+      class="boton-fab"
+      routerLink="/pelicula-form">
+
+      🎬
+
+    </ion-fab-button>
+
+  </ion-fab>
+
+</ion-content>

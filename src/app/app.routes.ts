@@ -1,36 +1,32 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
+
   {
     path: '',
-    redirectTo: 'videojuegos',
+    redirectTo: 'peliculas',
     pathMatch: 'full'
   },
+
   {
-    path: 'videojuegos',
+    path: 'peliculas',
     loadComponent: () =>
-      import('./pages/videojuegos/videojuegos.page')
-        .then(m => m.VideojuegosPage)
+      import('./pages/peliculas/peliculas.page')
+        .then(m => m.PeliculasPage)
   },
+
   {
-    path: 'videojuegos-form',
+    path: 'pelicula-form',
     loadComponent: () =>
-      import('./pages/videojuego-form/videojuego-form.page')
-        .then(m => m.VideojuegoFormPage)
+      import('./pages/pelicula-form/pelicula-form.page')
+        .then(m => m.PeliculaFormPage)
   },
+
   {
-    path: 'videojuegos-form/:id',
+    path: 'pelicula-form/:id',
     loadComponent: () =>
-      import('./pages/videojuego-form/videojuego-form.page')
-        .then(m => m.VideojuegoFormPage)
-  },
-  {
-    path: 'videojuegos',
-    loadComponent: () => import('./pages/videojuegos/videojuegos.page').then( m => m.VideojuegosPage)
-  },
-  
-  {
-    path: 'videojuego-form',
-    loadComponent: () => import('./pages/videojuego-form/videojuego-form.page').then( m => m.VideojuegoFormPage)
+      import('./pages/pelicula-form/pelicula-form.page')
+        .then(m => m.PeliculaFormPage)
   }
+
 ];
